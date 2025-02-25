@@ -11,4 +11,4 @@ class ErrorSmmlvLetras(Exception):
     """El SMMLV se debe ingresar de forma numerica"""
 
 class ErrorSmmlvMenor(Exception):
-    """El SMMLV no pude ser menor que cero"""
+    """El SMMLV no pude ser cero o menor"""

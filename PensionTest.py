@@ -112,6 +112,14 @@ class CalculaPensiontest(unittest.TestCase):
 
         with self.assertRaises(ErrorSmmlvLetras):
             calculate_pension(ibl, pension_porcentage, smmlv)
+    
+    def test_error_5(self):
+        ibl = 1_720_000
+        smmlv = 0
+        pension_poncentage = 24.5
+
+        with self.assertRaises(ErrorSmmlvMenor):
+            calculate_pension(ibl, pension_poncentage, smmlv)
 
 
 
