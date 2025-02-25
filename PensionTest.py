@@ -114,7 +114,7 @@ class CalculaPensiontest(unittest.TestCase):
             calculate_pension(ibl, pension_porcentage, smmlv)
 
     def test_error_5(self):
-        ibl = 1_720_000
+        ibl = 1_720_500
         smmlv = 0
         pension_poncentage = 24.5
 
