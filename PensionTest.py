@@ -88,7 +88,7 @@ class CalculaPensiontest(unittest.TestCase):
 
         with self.assertRaises(ErrorIblNegative):
             calculate_pension(ibl, pension_porcentage, smmlv)
-    
+
     def test_error_2(self):
         ibl = "tres millones quinientos"
         smmlv = 1_500_000
