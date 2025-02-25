@@ -58,7 +58,7 @@ class CalculaPensiontest(unittest.TestCase):
         result = calculate_pension(ibl, pension_porcentage, smmlv)
         
         self.assertAlmostEqual(result, expeted_pension, 2)
-    
+
     def test_exepcional_3(self):
         ibl = 700_000
         smmlv = 87_000
@@ -69,7 +69,7 @@ class CalculaPensiontest(unittest.TestCase):
         result = calculate_pension(ibl, pension_porcentage, smmlv)
         
         self.assertAlmostEqual(result, expeted_pension, 2)
-    
+
     def test_exepcional_4(self):
         ibl = 25_000_000
         smmlv = 1_423_500
