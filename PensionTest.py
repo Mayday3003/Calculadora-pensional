@@ -93,7 +93,7 @@ class CalculaPensiontest(unittest.TestCase):
         ibl = "tres millones quinientos"
         smmlv = 1_500_000
         pension_porcentage = 6.5
-        
+
         with self.assertRaises(ErroIblLetras):
             calculate_pension(ibl, pension_porcentage, smmlv)
     
@@ -112,7 +112,7 @@ class CalculaPensiontest(unittest.TestCase):
 
         with self.assertRaises(ErrorSmmlvLetras):
             calculate_pension(ibl, pension_porcentage, smmlv)
-    
+
     def test_error_5(self):
         ibl = 1_720_000
         smmlv = 0

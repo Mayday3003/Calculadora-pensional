@@ -14,7 +14,9 @@ def calculate_pension(ibl: float, pension_porcentage: float, smmlv: float):
 
     if type(smmlv) == str:
         raise ErrorSmmlvLetras
-
+    
+    if smmlv <= 0:
+        raise ErrorSmmlvMenor
     
 
     pension_porcentage = pension_porcentage/100
