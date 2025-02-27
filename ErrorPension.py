@@ -1,14 +1,14 @@
 class ErrorIblNegative(Exception):
-    """El IBL no puede ser cero o menor"""
+    """El valor de IBL no puede ser cero ni negativo. Por favor, ingrese un valor válido."""
 
 class ErroIblLetras(Exception):
-    """El IBL se debe ingresar de forma numerica"""
+    """El valor de IBL debe ser numérico. Por favor, ingrese un número válido."""
 
 class ErrorPensionPorcentageCero(Exception):
-    """El porsentaje de su pension no puede cero o menor"""
+    """El porcentaje ingresado de su pensión no puede ser cero o menor, ingrese un valor válido"""
 
 class ErrorSmmlvLetras(Exception):
-    """El SMMLV se debe ingresar de forma numerica"""
+    """El valor del SMMLV que ingresó se debe ingresar de forma numerica, porfavor ingrese un valor válido"""
 
 class ErrorSmmlvMenor(Exception):
-    """El SMMLV no pude ser cero o menor"""
+    """El valor del SMMLV ingresado no pude ser cero ni valores negativos"""
