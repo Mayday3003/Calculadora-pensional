@@ -9,6 +9,9 @@ def calculate_pension(ibl: float, pension_porcentage: float, smmlv: float):
     if ibl <= 0:
         raise ErrorIblNegative()
 
+    if type(pension_porcentage) == str:
+        raise ErrorPensionPorcentageLetras
+
     if pension_porcentage <= 0:
         raise ErrorPensionPorcentageCero
 
@@ -18,7 +21,6 @@ def calculate_pension(ibl: float, pension_porcentage: float, smmlv: float):
     if smmlv <= 0:
         raise ErrorSmmlvMenor
     
-
     pension_porcentage = pension_porcentage/100
     tasa_remplazo = pension_porcentage-((0.5/100)*(ibl/smmlv))
     return ibl*tasa_remplazo

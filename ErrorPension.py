@@ -20,4 +20,7 @@ class ErrorSmmlvLetras(Exception):
 class ErrorSmmlvMenor(Exception):
     def __init__(self):
         super().__init__("""El valor del SMMLV ingresado no pude ser cero ni valores negativos""")
-    
+
+class ErrorPensionPorcentageLetras(Exception):
+    def __init__(self):
+        super().__init__("""El valor del porcentaje de pension debe ser numérico. Por favor, ingrese un número válido.""")

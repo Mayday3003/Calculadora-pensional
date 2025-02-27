@@ -9,22 +9,19 @@ try:
 
     if ibl.isnumeric():
         ibl = float(ibl)
-    
-    if pension_porcentage.isnumeric():
+
+    if pension_porcentage[0].isnumeric():
         pension_porcentage = float(pension_porcentage)
 
     if smmlv.isnumeric():
         smmlv = float(smmlv)
-
+    
     mensual_pension = calculate_pension(ibl, pension_porcentage, smmlv)
 
-    print(f"EL valor de tu pensión mensual es: {mensual_pension}" )
+    print(f"EL valor de tu pensión mensual es: {round(mensual_pension)}" )
 
-except Exception as err:
-    print(f"Oh no!, ha sucesido un error: {err}")
-    
 except ErrorIblNegative as err:
-     print(f"Oh no!, ha sucesido un error: {err}")
+    print(f"Oh no!, ha sucesido un error: {err}")
 
 except ErroIblLetras as err:
     print(f"Oh no!, ha sucesido un error: {err}")
@@ -36,4 +33,7 @@ except ErrorSmmlvLetras as err:
     print(f"Oh no!, ha sucesido un error: {err}")
 
 except ErrorSmmlvMenor as err:
+    print(f"Oh no!, ha sucesido un error: {err}")   
+
+except ErrorPensionPorcentageLetras as err:
     print(f"Oh no!, ha sucesido un error: {err}")   
