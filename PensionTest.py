@@ -121,9 +121,7 @@ class CalculaPensiontest(unittest.TestCase):
         with self.assertRaises(ErrorSmmlvMenor):
             calculate_pension(ibl, pension_poncentage, smmlv)
 
-ibl= float(input("Ingrese el ibl:"))
-pension_porcentage = float(input("Ingrese el porcentaje de pensión:"))
-smmlv = float(input("Ingrese su salario minimo legal vigente:"))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -2,7 +2,7 @@ from ErrorPension import *
 
 def calculate_pension(ibl: float, pension_porcentage: float, smmlv: float):
 
-    
+
     if type(ibl) == str:
         raise ErroIblLetras()
 
