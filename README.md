@@ -4,3 +4,8 @@ En este repositorio se podrá encontrar toda la información acerca de la calcul
 Entrevista sobre las pensiones: https://drive.google.com/file/d/1enmZgatAiFyT37SUNeuEhobB0pi-XEJx/view?usp=sharing
 
 el cálculo de la pensión se basa en el Ingreso Base de Liquidación (IBL) y la tasa de reemplazo, que depende del número de semanas cotizadas y del IBL en relación con el Salario Mínimo Legal Vigente.
+
+Nombres de los creadores del repositorio: 
+
+- Kevin Mateo Gomez Diez
+- Sara Rojas Martínez
