@@ -102,7 +102,7 @@ class CalculaPensiontest(unittest.TestCase):
         current_legal_minimum_wage = 1_360_000
         pension_porcentage = 0
 
-        with self.assertRaises(ErrorPensionPorcentageCero):
+        with self.assertRaises(ErrorPensionPorcentageNegative):
             calculate_pension(base_settlement_income, pension_porcentage, current_legal_minimum_wage) 
     
     def test_error_4(self):
@@ -118,7 +118,7 @@ class CalculaPensiontest(unittest.TestCase):
         current_legal_minimum_wage = 0
         pension_poncentage = 24.5
 
-        with self.assertRaises(ErrorCurrentLegalMinimumWageMenor):
+        with self.assertRaises(ErrorCurrentLegalMinimumWageNegative):
             calculate_pension(base_settlement_income, pension_poncentage, current_legal_minimum_wage)
 
 

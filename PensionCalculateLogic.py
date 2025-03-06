@@ -16,7 +16,7 @@ def calculate_pension(ingreso_base_de_liquidacion: float, pension_porcentage: fl
 
     # Se evalua si el porcentaje de pension es igual o menor a cero y si es asi se muestra un error
     if pension_porcentage <= 0:
-        raise ErrorPensionPorcentageCero()
+        raise ErrorPensionPorcentageNegative()
 
     # Se evalua si el salario minimo legal vigente es un str y si es asi se muestra un error
     if type(salario_minimo_legal_vigente) == str:
@@ -24,7 +24,7 @@ def calculate_pension(ingreso_base_de_liquidacion: float, pension_porcentage: fl
     
     # Se evalua si el salario minimo legal vigente es igual o menor a cero y si es asi se muestra un error
     if salario_minimo_legal_vigente <= 0:
-        raise ErrorCurrentLegalMinimumWageMenor()
+        raise ErrorCurrentLegalMinimumWageNegative()
     
     # Se calcula el porcentaje de la pension
     pension_porcentage = pension_porcentage/100

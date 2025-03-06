@@ -6,18 +6,19 @@ class ErrorBaseSettlementIncomeLetras(Exception):
     def __init__(self):
         super().__init__("""El valor de ingreso_base_de_liquidacion debe ser numérico. Por favor, ingrese un número válido.""")
 
-class ErrorPensionPorcentageCero(Exception):
+class ErrorPensionPorcentageNegative(Exception):
     def __init__(self):
         super().__init__("""El porcentaje ingresado de su pensión no puede ser cero o menor, ingrese un valor válido""")
+
+class ErrorPensionPorcentageLetras(Exception):
+    def __init__(self):
+        super().__init__("""El valor del porcentaje de pension debe ser numérico. Por favor, ingrese un número válido.""")
 
 class ErrorcurrentLegalMinimumWageLetras(Exception):
     def __init__(self):
         super().__init__("""El valor del SMMLV que ingresó se debe ingresar de forma numerica, porfavor ingrese un valor válido""")
 
-class ErrorCurrentLegalMinimumWageMenor(Exception):
+class ErrorCurrentLegalMinimumWageNegative(Exception):
     def __init__(self):
         super().__init__("""El valor del SMMLV ingresado no pude ser cero ni valores negativos""")
 
-class ErrorPensionPorcentageLetras(Exception):
-    def __init__(self):
-        super().__init__("""El valor del porcentaje de pension debe ser numérico. Por favor, ingrese un número válido.""")
