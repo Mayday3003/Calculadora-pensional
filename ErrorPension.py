@@ -14,7 +14,7 @@ class ErrorPensionPorcentageLetras(Exception):
     def __init__(self):
         super().__init__("""El valor del porcentaje de pension debe ser numérico. Por favor, ingrese un número válido.""")
 
-class ErrorcurrentLegalMinimumWageLetras(Exception):
+class ErrorCurrentLegalMinimumWageLetras(Exception):
     def __init__(self):
         super().__init__("""El valor del SMMLV que ingresó se debe ingresar de forma numerica, porfavor ingrese un valor válido""")
 

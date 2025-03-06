@@ -20,20 +20,20 @@ try:
 
     print(f"EL valor de tu pensión mensual es: {round(mensual_pension)}" )
 
-except ErrorIblNegative as err:
+except ErrorBaseSettlementIncomeNegative as err:
     print(f"Oh no!, ha sucesido un error: {err}")
 
-except ErroIblLetras as err:
+except ErrorBaseSettlementIncomeLetras as err:
     print(f"Oh no!, ha sucesido un error: {err}")
 
-except ErrorPensionPorcentageCero as err:
+except ErrorPensionPorcentageNegative as err:
     print(f"Oh no!, ha sucesido un error: {err}")
-
-except ErrorSmmlvLetras as err:
-    print(f"Oh no!, ha sucesido un error: {err}")
-
-except ErrorSmmlvMenor as err:
-    print(f"Oh no!, ha sucesido un error: {err}")   
 
 except ErrorPensionPorcentageLetras as err:
+    print(f"Oh no!, ha sucesido un error: {err}")  
+
+except ErrorCurrentLegalMinimumWageLetras as err:
+    print(f"Oh no!, ha sucesido un error: {err}")
+
+except ErrorCurrentLegalMinimumWageNegative as err:
     print(f"Oh no!, ha sucesido un error: {err}")   

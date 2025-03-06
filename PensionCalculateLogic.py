@@ -20,7 +20,7 @@ def calculate_pension(ingreso_base_de_liquidacion: float, pension_porcentage: fl
 
     # Se evalua si el salario minimo legal vigente es un str y si es asi se muestra un error
     if type(salario_minimo_legal_vigente) == str:
-        raise ErrorcurrentLegalMinimumWageLetras()
+        raise ErrorCurrentLegalMinimumWageLetras()
     
     # Se evalua si el salario minimo legal vigente es igual o menor a cero y si es asi se muestra un error
     if salario_minimo_legal_vigente <= 0:
