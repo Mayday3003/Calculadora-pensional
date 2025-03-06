@@ -7,7 +7,7 @@ Entrevista sobre las pensiones: https://drive.google.com/file/d/1enmZgatAiFyT37S
 
 - Arquitectura:
 El proyecto tiene una estructura donde todos los archivos estan separados por carpetas las cuales son: model, view\console y test. Además, hay un archivo .gitignore el cual a la hora de hacer los commits y los pushs va a ignorar las carpetas con nombre __pycache__.
-También, se agregó un archivo de excel el cual tiene la información de los casos de prueba de la canculadora pensional. 
+También, se agregó un archivo de excel el cual tiene la información de los casos de prueba de la calculadora pensional. 
 
 - Intrucciones para ejercutar las pruebas unitarias:
 * Se ingresa a la carpeta test
