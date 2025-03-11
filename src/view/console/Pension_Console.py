@@ -13,6 +13,9 @@ try:
     if ibl.isnumeric():
         ibl = float(ibl)
 
+    if smmlv.isnumeric():
+        smmlv = float(smmlv)
+
     # Evalua si un el primer digito es un numero y convertira a pension porcentage en un float
     if pension_porcentage[0].isnumeric():
         pension_porcentage = float(pension_porcentage)
@@ -21,8 +24,7 @@ try:
     elif pension_porcentage[1].isnumeric():
         pension_porcentage = float(pension_porcentage)
 
-    if smmlv.isnumeric():
-        smmlv = float(smmlv)
+
     
     mensual_pension = calculate_pension(ibl, pension_porcentage, smmlv)
 
