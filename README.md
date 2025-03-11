@@ -14,7 +14,7 @@ Intrucciones para ejercutar las pruebas unitarias:
 * Luego, se ingresa al archivo Pension_Calculate_Test.py
 * Y por último, se ejecuta el código
 
-- Intrucciones para ejercutar la interfaz de Consola:
+Intrucciones para ejercutar la interfaz de Consola:
 * Se ingresa a la carpeta view\console
 * Se accede a la carpeta console
 * Se ingresa al archivo Pension_Console.py
