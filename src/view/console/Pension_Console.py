@@ -18,7 +18,7 @@ try:
         pension_porcentage = float(pension_porcentage)
     
     # Evalua si un el segundo digito es un numero y convertira a pension porcentage en un float(caso para numeros negativos)
-    if pension_porcentage[1].isnumeric():
+    elif pension_porcentage[1].isnumeric():
         pension_porcentage = float(pension_porcentage)
 
     if smmlv.isnumeric():
