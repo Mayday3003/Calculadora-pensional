@@ -6,7 +6,7 @@ from model.Error_Pension import *
 
 
 try:
-    ibl= input("Ingrese el ibl:")
+    ibl= input("Ingrese la base de liquidacion:")
     pension_porcentage = input("Ingrese el porcentaje de pensión:")
     smmlv = input("Ingrese su salario minimo legal vigente:")
 
