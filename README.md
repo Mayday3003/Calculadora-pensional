@@ -24,19 +24,19 @@ También, se agregó un archivo de excel el cual tiene la información de los ca
 * Luego, se ingresa el valor del salario mínimo legal vigente
 * Y por ultimo se muestra el valor total de la pensión
 
--Entradas:
+Entradas:
 * Base de liquidación
 * Porcentaje de pensión
 * Salario minimo legal vigente
 
--Proceso:
+Proceso:
 * Se ejecuta el archivo Pension_Console.py para iniciar la ejecución
 * Se ingresan los valores pedidos
 * El programa convierte los valores a floats
 * Se calcula la tasa de remplazo
 * Se multiplica el ingreso de base de liquidación por la tasa de remplazo
 
--Salidas
+Salidas
 * Se muestra el total de la pensión mesual
 
 
