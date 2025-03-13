@@ -39,10 +39,16 @@ También, se agregó un archivo de excel el cual tiene la información de los ca
 ## Salidas:
 * Se muestra el total de la pensión mesual
 
-## Como ejecutar desde consola/terminal
+## Como ejecutar desde consola/terminal:
 Se ingresa a la carpeta raiz (calculadora-pensional) y desde la teminal se ejecuta el siguiente comando:
 ```
 py src\view\console\Pension_Console.py
+```
+
+## Como ejecutar las pruebas (test) desde la teminal:
+Se ingresa a la carpeta raiz (calculadora-pensional) y desde la teminal se ejecuta el siguiente comando:
+```
+py test\Pension_Calculate_Test.py
 ```
 
 ## Nombres de los creadores del repositorio: 
