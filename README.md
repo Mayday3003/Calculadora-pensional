@@ -41,9 +41,11 @@ También, se agregó un archivo de excel el cual tiene la información de los ca
 
 ## Como ejecutar desde consola/terminal
 Se ingresa a la carpeta raiz (calculadora-pensional) y desde la teminal se ejecuta el siguiente comando:
-"""py src\view\console\Pension_Console.py"""
+```
+py src\view\console\Pension_Console.py
+```
 
-##Nombres de los creadores del repositorio: 
+## Nombres de los creadores del repositorio: 
 
 - Kevin Mateo Gomez Diez
 - Sara Rojas Martínez
