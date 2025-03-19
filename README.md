@@ -9,12 +9,12 @@ El cálculo de la pensión se basa en el Ingreso Base de Liquidación (IBL) y la
 El proyecto tiene una estructura donde todos los archivos estan separados por carpetas las cuales son: model, view\console y test. Además, hay un archivo .gitignore el cual a la hora de hacer los commits y los pushs va a ignorar las carpetas con nombre __pycache__.
 También, se agregó un archivo de excel el cual tiene la información de los casos de prueba de la calculadora pensional. 
 
-## Intrucciones para ejercutar las pruebas unitarias:
+## Intrucciones para ejecutar las pruebas unitarias:
 * Se ingresa a la carpeta test
 * Luego, se ingresa al archivo Pension_Calculate_Test.py
 * Y por último, se ejecuta el código
 
-## Intrucciones para ejercutar la interfaz de Consola:
+## Intrucciones para ejecutar la interfaz de Consola:
 * Se ingresa a la carpeta view\console
 * Se accede a la carpeta console
 * Se ingresa al archivo Pension_Console.py
