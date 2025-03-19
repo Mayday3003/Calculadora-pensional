@@ -37,7 +37,7 @@ También, se agregó un archivo de excel el cual tiene la información de los ca
 * Se multiplica el ingreso de base de liquidación por la tasa de remplazo
 
 ## Salidas:
-* Se muestra el total de la pensión mesual
+* Se muestra el total de la pensión mensual
 
 ## Como ejecutar desde consola/terminal:
 Se ingresa a la carpeta raiz (calculadora-pensional) y desde la teminal se ejecuta el siguiente comando:
