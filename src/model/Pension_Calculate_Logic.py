@@ -4,20 +4,6 @@ sys.path.append("src")
 from model.Error_Pension import *
 
 def calculate_pension(ingreso_base_de_liquidacion: float, pension_porcentage: float, salario_minimo_legal_vigente: float):
-    if ingreso_base_de_liquidacion.isnumeric():
-        ingreso_base_de_liquidacion = float(ingreso_base_de_liquidacion)
-
-    if salario_minimo_legal_vigente.isnumeric():
-        salario_minimo_legal_vigente = float(salario_minimo_legal_vigente)
-
-    # Evalua si un el primer digito es un numero y convertira a pension porcentage en un float
-    if pension_porcentage[0].isnumeric():
-        pension_porcentage = float(pension_porcentage)
-    
-    # Evalua si un el segundo digito es un numero y convertira a pension porcentage en un float(caso para numeros negativos)
-    elif pension_porcentage[1].isnumeric():
-        pension_porcentage = float(pension_porcentage)
-    
     # Se evalua si el ingreso base de liquidacion es un str y si es asi se muestra un error
     if type(ingreso_base_de_liquidacion) == str:
         raise ErrorBaseSettlementIncomeLetras()
