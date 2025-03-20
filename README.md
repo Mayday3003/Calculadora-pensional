@@ -40,18 +40,17 @@ También, se agregó un archivo de excel el cual tiene la información de los ca
 * Se muestra el total de la pensión mensual
 
 ## Como ejecutar desde consola/terminal:
-Se clona el proyecto o se clona luego ingresa a la carpeta raiz (calculadora-pensional) y desde la teminal se ejecuta el siguiente comando:
+e clona el proyecto luego ingresa a la carpeta raiz (calculadora-pensional), desde la terminal usando el comando "cd" y se pone la ruta en donde se guardo la carpeta raiz, la ruta se obtine copiando la direccion desde la carpeta raiz, y desde la teminal se ejecuta el siguiente comando:
 ```
 py src\view\console\Pension_Console.py
 ```
 
 ## Como ejecutar las pruebas (test) desde la teminal:
-Se clona el proyecto o se clona luego ingresa a la carpeta raiz (calculadora-pensional) y desde la teminal se ejecuta el siguiente comando:
+Se clona el proyecto luego ingresa a la carpeta raiz (calculadora-pensional), desde la terminal usando el comando "cd" y se pone la ruta en donde se guardo la carpeta raiz, la ruta se obtine copiando la direccion desde la carpeta raiz, y desde la teminal se ejecuta el siguiente comando:
 ```
 py test\Pension_Calculate_Test.py
 ```
 
 ## Nombres de los creadores del repositorio: 
-
 - Kevin Mateo Gomez Diez
 - Sara Rojas Martínez
