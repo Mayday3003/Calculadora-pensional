@@ -1,10 +1,10 @@
 class ErrorBaseSettlementIncomeNegative(Exception):
     def __init__(self):
-        super().__init__("El valor de ingreso_base_de_liquidacion no puede ser cero ni negativo. Por favor, ingrese un valor válido.")
+        super().__init__("El valor de ingreso base de liquidacion no puede ser cero ni negativo. Por favor, ingrese un valor válido.")
 
 class ErrorBaseSettlementIncomeLetras(Exception):
     def __init__(self):
-        super().__init__("El valor de ingreso_base_de_liquidacion debe ser numérico. Por favor, ingrese un número válido.")
+        super().__init__("El valor de ingreso base de liquidacion debe ser numérico. Por favor, ingrese un número válido.")
 
 class ErrorPensionPorcentageNegative(Exception):
     def __init__(self):
