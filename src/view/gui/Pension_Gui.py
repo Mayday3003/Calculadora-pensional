@@ -8,6 +8,7 @@ from kivy.uix.popup import Popup
 
 import sys
 sys.path.append("src")
+from model.Pension_Calculate_Logic import calculate_pension
 
 
 class PensionApp(App):
@@ -32,13 +33,16 @@ class PensionApp(App):
 
         boton_calcular = Button(text = 'Calcular')
         contenedor.add_widget(boton_calcular)
-        #calcular.bind(on_press = self.)
+        boton_calcular.bind(on_press = self.calcular)
 
         return contenedor
     
-    # def calcular(self, value):
-    #     try:
-    #         self.
+    def calcular(self, sender):
+        ingreso_base_de_liquidacion = float(self.liquidacion.text)
+        pension_porcentage = float(self.pension_porcentage.text)
+        salario_minimo_legal_vigente = float(self.salario_minimo.text)
+        result = calculate_pension(ingreso_base_de_liquidacion, pension_porcentage, salario_minimo_legal_vigente)
+        self.resultado.text = str(round(result, 2))
     
     
     
