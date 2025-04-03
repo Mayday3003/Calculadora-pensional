@@ -37,13 +37,45 @@ class PensionApp(App):
 
         return contenedor
     
-    def calcular(self, sender):
-        ingreso_base_de_liquidacion = float(self.liquidacion.text)
-        pension_porcentage = float(self.pension_porcentage.text)
-        salario_minimo_legal_vigente = float(self.salario_minimo.text)
-        result = calculate_pension(ingreso_base_de_liquidacion, pension_porcentage, salario_minimo_legal_vigente)
-        self.resultado.text = str(round(result, 2))
+    def validar(self):
+        if(not(self.liquidacion.text.isnumeric())):
+            raise Exception('El valor de liquidacion debe ser un numero')
+        if(not(self.pension_porcentage.text.isnumeric())):
+            raise Exception('El valor del porcentage debe ser un numero')
+        if(not(self.salario_minimo.text.isnumeric())):
+            raise Exception('El valor del salario minimo debe ser un numero')
+        
+    def mostrar_error(self, err):
+
+        contenido = GridLayout(cols = 1)
+
+        contenido.add_widget(Label(text = str(err)))
+
+        cerrar = Button(text = 'Cerrar')
+        contenido.add_widget(cerrar)
+
+        popup = Popup(title = 'Error', content = contenido)
+
+        cerrar.bind(on_press = popup.dismiss)
+
+        popup.open()
     
+    def calcular(self, value):
+        try:
+            self.validar()
+
+            ingreso_base_de_liquidacion = float(self.liquidacion.text)
+            pension_porcentage = float(self.pension_porcentage.text)
+            salario_minimo_legal_vigente = float(self.salario_minimo.text)
+
+            result = calculate_pension(ingreso_base_de_liquidacion, pension_porcentage, salario_minimo_legal_vigente)
+            self.resultado.text = str(round(result, 2))
+
+        except ValueError as err:
+            self.resultado.text = 'El valor ingresado no es un numero válido. Ingrese un numero correcto'
+
+        except Exception as err:
+            self.mostrar_error(err)
     
     
 if __name__ == "__main__":

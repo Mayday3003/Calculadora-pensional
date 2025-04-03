@@ -1,3 +1,11 @@
+## Nombres de los creadores del repositorio: 
+- Kevin Mateo Gomez Diez
+- Sara Rojas Martínez
+
+## Nombres, segunda entrega:
+- Heiver David Ruales Luna
+- Mariana
+
 # Calculadora-pensional
 En este repositorio se podrá encontrar toda la información acerca de la calculadora pensional, este proyecto tiene como objetivo proporcionar una herramienta intuitiva y eficiente para calcular la pensión y simulaciones personalizas para cada usuario. 
 
@@ -50,7 +58,3 @@ Se clona el proyecto luego ingresa a la carpeta raiz (calculadora-pensional), de
 ```
 py test\Pension_Calculate_Test.py
 ```
-
-## Nombres de los creadores del repositorio: 
-- Kevin Mateo Gomez Diez
-- Sara Rojas Martínez
