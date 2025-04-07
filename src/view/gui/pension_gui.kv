@@ -1,0 +1,113 @@
+<PensionLayout>:
+    orientation: 'vertical'
+    padding: 30
+    spacing: 15
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1  # Fondo oscuro
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        text: "Calculadora Pensional"
+        font_size: '26sp'
+        bold: True
+        color: 1, 1, 1, 1
+        size_hint_y: None
+        height: '60dp'
+
+    BoxLayout:
+        size_hint_y: None
+        height: '50dp'
+        spacing: 10
+        Label:
+            text: "IBL:"
+            size_hint_x: 0.4
+            color: 1, 1, 1, 1
+            halign: 'left'
+            valign: 'middle'
+        TextInput:
+            id: base_settlement_income
+            background_normal: ''
+            background_color: 0.2, 0.2, 0.2, 1
+            foreground_color: 1, 1, 1, 1
+            multiline: False
+            hint_text: "Ingrese el IBL"
+            hint_text_color: 0.6, 0.6, 0.6, 1
+            input_filter: 'float'
+            padding: [10, 10]
+
+    BoxLayout:
+        size_hint_y: None
+        height: '50dp'
+        spacing: 10
+        Label:
+            text: "Porcentaje de pensión:"
+            size_hint_x: 0.4
+            color: 1, 1, 1, 1
+            halign: 'left'
+            valign: 'middle'
+        TextInput:
+            id: pension_percentage
+            background_normal: ''
+            background_color: 0.2, 0.2, 0.2, 1
+            foreground_color: 1, 1, 1, 1
+            multiline: False
+            hint_text: "Ingrese el porcentaje"
+            hint_text_color: 0.6, 0.6, 0.6, 1
+            input_filter: 'float'
+            padding: [10, 10]
+
+    BoxLayout:
+        size_hint_y: None
+        height: '50dp'
+        spacing: 10
+        Label:
+            text: "SMMLV actual:"
+            size_hint_x: 0.4
+            color: 1, 1, 1, 1
+            halign: 'left'
+            valign: 'middle'
+        TextInput:
+            id: current_legal_minimum_wage
+            background_normal: ''
+            background_color: 0.2, 0.2, 0.2, 1
+            foreground_color: 1, 1, 1, 1
+            multiline: False
+            hint_text: "Ingrese el SMMLV"
+            hint_text_color: 0.6, 0.6, 0.6, 1
+            input_filter: 'float'
+            padding: [10, 10]
+
+    Label:
+        id: result_label
+        text: "Resultado:"
+        font_size: '20sp'
+        color: 0.8, 0.8, 0.8, 1
+        size_hint_y: None
+        height: '40dp'
+        bold: True
+
+    BoxLayout:
+        size_hint_y: None
+        height: '50dp'
+        spacing: 15
+        Button:
+            text: "Calcular"
+            background_normal: ''
+            background_color: 0.2, 0.6, 0.9, 1
+            color: 1, 1, 1, 1
+            on_press: root.calcular_pension_gui()
+        Button:
+            text: "Limpiar"
+            background_normal: ''
+            background_color: 0.5, 0.5, 0.5, 1
+            color: 1, 1, 1, 1
+            on_press: root.limpiar_campos()
+        Button:
+            text: "Ayuda"
+            background_normal: ''
+            background_color: 0.2, 0.7, 0.4, 1
+            color: 1, 1, 1, 1
+            on_press: root.mostrar_ayuda()
