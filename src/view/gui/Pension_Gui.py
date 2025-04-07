@@ -9,9 +9,10 @@ from kivy.core.window import Window
 import sys
 import os
 
+# Agregar la ruta base del proyecto
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
-# Importar lógica y errores personalizados
+# Importar la lógica de cálculo y las excepciones personalizadas
 from model.Pension_Calculate_Logic import calculate_pension
 from model.Error_Pension import (
     ErrorBaseSettlementIncomeNegative,
@@ -23,41 +24,69 @@ from model.Error_Pension import (
     ErrorCurrentLegalMinimumWageNegative
 )
 
-# Cargar la interfaz .kv
+# Cargar la interfaz KV (asegúrate que la ruta sea correcta)
 Builder.load_file("src/view/gui/pension_gui.kv")
 
 
 class PensionLayout(BoxLayout):
     def calcular_pension_gui(self):
-        ibl = self.ids.base_settlement_income.text
-        porcentaje = self.ids.pension_percentage.text
-        smmlv = self.ids.current_legal_minimum_wage.text
+        # Obtener y limpiar los textos de los campos
+        ibl = self.ids.base_settlement_income.text.strip()
+        porcentaje = self.ids.pension_percentage.text.strip()
+        smmlv = self.ids.current_legal_minimum_wage.text.strip()
 
         self.restaurar_colores()
 
         try:
+            # Verificar que ningún campo esté vacío
+            if not ibl or not porcentaje or not smmlv:
+                raise ValueError("Todos los campos deben estar completos.")
+
+            # Convertir a float y realizar el cálculo
             resultado = calculate_pension(float(ibl), float(porcentaje), float(smmlv))
-            self.ids.result_label.color = (0, 1, 0, 1)
+            self.ids.result_label.color = (0, 1, 0, 1)  # Verde para éxito
             self.ids.result_label.text = f"Resultado: ${resultado:,.2f}"
             self.mostrar_popup_info("Cálculo exitoso", "La pensión fue calculada correctamente.")
-        except Exception as e:
-            self.ids.result_label.color = (1, 0, 0, 1)
+
+        except (ErrorBaseSettlementIncomeNegative, ErrorBaseSettlementIncomeLetras,
+                ErrorPensionPorcentageNegative, ErrorPensionPorcentageLetras,
+                ErrorHighPensionPorcentage, ErrorCurrentLegalMinimumWageLetras,
+                ErrorCurrentLegalMinimumWageNegative, ValueError) as e:
+            self.ids.result_label.color = (1, 0, 0, 1)  # Rojo para error
             self.ids.result_label.text = "Error: Revise los campos"
             self.colorear_campos_error(e)
             self.mostrar_popup_error("Error de entrada", str(e))
+        except Exception as e:
+            # Manejo de cualquier otro error inesperado
+            self.ids.result_label.color = (1, 0, 0, 1)
+            self.ids.result_label.text = "Error: Revise los campos"
+            self.mostrar_popup_error("Error inesperado", str(e))
 
     def colorear_campos_error(self, error):
-        if isinstance(error, (ErrorBaseSettlementIncomeNegative, ErrorBaseSettlementIncomeLetras)):
-            self.ids.base_settlement_income.background_color = (1, 0.7, 0.7, 1)
-        if isinstance(error, (ErrorPensionPorcentageNegative, ErrorPensionPorcentageLetras, ErrorHighPensionPorcentage)):
-            self.ids.pension_percentage.background_color = (1, 0.7, 0.7, 1)
-        if isinstance(error, (ErrorCurrentLegalMinimumWageNegative, ErrorCurrentLegalMinimumWageLetras)):
-            self.ids.current_legal_minimum_wage.background_color = (1, 0.7, 0.7, 1)
+        # Color rojo oscuro para mantener la estética del modo oscuro
+        color_error = (0.4, 0.1, 0.1, 1)
+        # Si se lanza un ValueError (por ejemplo, campo vacío), coloreamos los campos vacíos
+        if isinstance(error, ValueError):
+            if not self.ids.base_settlement_income.text.strip():
+                self.ids.base_settlement_income.background_color = color_error
+            if not self.ids.pension_percentage.text.strip():
+                self.ids.pension_percentage.background_color = color_error
+            if not self.ids.current_legal_minimum_wage.text.strip():
+                self.ids.current_legal_minimum_wage.background_color = color_error
+        else:
+            if isinstance(error, (ErrorBaseSettlementIncomeNegative, ErrorBaseSettlementIncomeLetras)):
+                self.ids.base_settlement_income.background_color = color_error
+            if isinstance(error, (ErrorPensionPorcentageNegative, ErrorPensionPorcentageLetras, ErrorHighPensionPorcentage)):
+                self.ids.pension_percentage.background_color = color_error
+            if isinstance(error, (ErrorCurrentLegalMinimumWageNegative, ErrorCurrentLegalMinimumWageLetras)):
+                self.ids.current_legal_minimum_wage.background_color = color_error
 
     def restaurar_colores(self):
-        self.ids.base_settlement_income.background_color = (1, 1, 1, 1)
-        self.ids.pension_percentage.background_color = (1, 1, 1, 1)
-        self.ids.current_legal_minimum_wage.background_color = (1, 1, 1, 1)
+        # Restaurar al color oscuro base (modo oscuro)
+        color_base = (0.2, 0.2, 0.2, 1)
+        self.ids.base_settlement_income.background_color = color_base
+        self.ids.pension_percentage.background_color = color_base
+        self.ids.current_legal_minimum_wage.background_color = color_base
 
     def limpiar_campos(self):
         self.ids.base_settlement_income.text = ""
@@ -69,13 +98,13 @@ class PensionLayout(BoxLayout):
 
     def mostrar_popup_error(self, titulo, mensaje):
         popup = Popup(title=titulo,
-                      content=Label(text=mensaje),
+                      content=Label(text=mensaje, font_size="16sp"),
                       size_hint=(None, None), size=(400, 200))
         popup.open()
 
     def mostrar_popup_info(self, titulo, mensaje):
         popup = Popup(title=titulo,
-                      content=Label(text=mensaje),
+                      content=Label(text=mensaje, font_size="16sp"),
                       size_hint=(None, None), size=(400, 200))
         popup.open()
 
