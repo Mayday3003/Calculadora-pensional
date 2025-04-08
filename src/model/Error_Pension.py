@@ -1,28 +1,60 @@
+# -------------------- ERRORES: INGRESO BASE DE LIQUIDACIÓN (IBL) --------------------
+
 class ErrorBaseSettlementIncomeNegative(Exception):
+    """
+    Se lanza cuando el ingreso base de liquidación es menor o igual a cero.
+    """
     def __init__(self):
-        super().__init__("El valor de ingreso base de liquidacion no puede ser cero ni negativo. Por favor, ingrese un valor válido.")
+        super().__init__("El ingreso base de liquidación no puede ser negativo ni cero.")
+
 
 class ErrorBaseSettlementIncomeLetras(Exception):
+    """
+    Se lanza cuando el ingreso base de liquidación contiene letras o caracteres no válidos.
+    """
     def __init__(self):
-        super().__init__("El valor de ingreso base de liquidacion debe ser numérico. Por favor, ingrese un número válido.")
+        super().__init__("El ingreso base de liquidación no debe contener letras ni símbolos.")
+
+
+# -------------------- ERRORES: PORCENTAJE DE PENSIÓN --------------------
 
 class ErrorPensionPorcentageNegative(Exception):
+    """
+    Se lanza cuando el porcentaje de pensión es menor o igual a cero.
+    """
     def __init__(self):
-        super().__init__("El porcentaje ingresado de su pensión no puede ser cero o menor, ingrese un valor válido")
+        super().__init__("El porcentaje de pensión no puede ser negativo ni cero.")
+
 
 class ErrorPensionPorcentageLetras(Exception):
+    """
+    Se lanza cuando el porcentaje de pensión contiene letras o caracteres no válidos.
+    """
     def __init__(self):
-        super().__init__("El valor del porcentaje de pension debe ser numérico. Por favor, ingrese un número válido.")
+        super().__init__("El porcentaje de pensión no debe contener letras ni símbolos.")
+
 
 class ErrorHighPensionPorcentage(Exception):
+    """
+    Se lanza cuando el porcentaje de pensión es igual o superior al 100%.
+    """
     def __init__(self):
-        super().__init__("El valor del porcentaje de pension debe ser menor que cien. Por favor, ingrese un número válido.")
+        super().__init__("El porcentaje de pensión no puede ser igual o mayor al 100%.")
+
+
+# -------------------- ERRORES: SALARIO MÍNIMO LEGAL VIGENTE (SMMLV) --------------------
 
 class ErrorCurrentLegalMinimumWageLetras(Exception):
+    """
+    Se lanza cuando el salario mínimo legal vigente contiene letras o caracteres no válidos.
+    """
     def __init__(self):
-        super().__init__("El valor del SMMLV que ingresó se debe ingresar de forma numerica, porfavor ingrese un valor válido")
+        super().__init__("El salario mínimo legal vigente no debe contener letras ni símbolos.")
+
 
 class ErrorCurrentLegalMinimumWageNegative(Exception):
+    """
+    Se lanza cuando el salario mínimo legal vigente es menor o igual a cero.
+    """
     def __init__(self):
-        super().__init__("""El valor del SMMLV ingresado no pude ser cero ni valores negativos""")
-
+        super().__init__("El salario mínimo legal vigente no puede ser negativo ni cero.")

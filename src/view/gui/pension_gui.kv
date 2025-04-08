@@ -1,16 +1,21 @@
-<PensionLayout>:
+# Vista principal de la calculadora pensional
+PensionLayout:
+
+<PensionLayout@BoxLayout>:
     orientation: 'vertical'
-    # Ajusta [left, top, right, bottom] para controlar los márgenes
     padding: [30, 50, 30, 50]
     spacing: 20
+
     canvas.before:
         Color:
-            rgba: 0.1, 0.1, 0.1, 1  # Fondo oscuro
+            rgba: 0.1, 0.1, 0.1, 1
         Rectangle:
             pos: self.pos
             size: self.size
 
-    # Título
+    ############################################################################
+    #                            TÍTULO PRINCIPAL                             #
+    ############################################################################
     Label:
         text: "Calculadora Pensional"
         font_size: "32sp"
@@ -20,112 +25,157 @@
         height: "60dp"
         halign: "center"
         valign: "middle"
-        # text_size: self.size  # Descomenta si quieres que se ajuste el texto automáticamente
+        text_size: self.size
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.1, 0.1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
 
-    # Contenedor de los campos de entrada
+    ############################################################################
+    #                     CONTENEDOR DE CAMPOS DE ENTRADA                     #
+    ############################################################################
     BoxLayout:
         orientation: 'vertical'
         spacing: 15
-        # Dejamos que crezca en base a su contenido
         size_hint_y: None
         height: self.minimum_height
 
-        # Fila para IBL
+        # IBL
         BoxLayout:
             size_hint_y: None
             height: "50dp"
             spacing: 10
+
             Label:
                 text: "IBL:"
                 size_hint_x: 0.4
                 color: 1, 1, 1, 1
                 halign: 'left'
                 valign: 'middle'
+                text_size: self.size
+
             TextInput:
                 id: base_settlement_income
+                hint_text: "Ej: 2500000"
+                multiline: False
+                input_filter: 'float'
+                size_hint_x: 0.6
                 background_normal: ''
                 background_color: 0.2, 0.2, 0.2, 1
                 foreground_color: 1, 1, 1, 1
-                multiline: False
-                hint_text: "Ingrese el IBL"
-                hint_text_color: 0.6, 0.6, 0.6, 1
-                input_filter: 'float'
                 padding: [10, 10]
 
-        # Fila para Porcentaje
+        # Porcentaje de pensión
         BoxLayout:
             size_hint_y: None
             height: "50dp"
             spacing: 10
+
             Label:
-                text: "Porcentaje de pensión:"
+                text: "Porcentaje (%):"
                 size_hint_x: 0.4
                 color: 1, 1, 1, 1
                 halign: 'left'
                 valign: 'middle'
+                text_size: self.size
+
             TextInput:
                 id: pension_percentage
+                hint_text: "Ej: 65"
+                multiline: False
+                input_filter: 'float'
+                size_hint_x: 0.6
                 background_normal: ''
                 background_color: 0.2, 0.2, 0.2, 1
                 foreground_color: 1, 1, 1, 1
-                multiline: False
-                hint_text: "Ingrese el porcentaje"
-                hint_text_color: 0.6, 0.6, 0.6, 1
-                input_filter: 'float'
                 padding: [10, 10]
 
-        # Fila para SMMLV
+        # SMMLV (solo lectura)
         BoxLayout:
             size_hint_y: None
             height: "50dp"
             spacing: 10
+
             Label:
                 text: "SMMLV actual:"
                 size_hint_x: 0.4
                 color: 1, 1, 1, 1
                 halign: 'left'
                 valign: 'middle'
+                text_size: self.size
+
             TextInput:
                 id: current_legal_minimum_wage
-                background_normal: ''
-                background_color: 0.2, 0.2, 0.2, 1
-                foreground_color: 1, 1, 1, 1
+                text: "1300000"
                 multiline: False
-                hint_text: "Ingrese el SMMLV"
-                hint_text_color: 0.6, 0.6, 0.6, 1
-                input_filter: 'float'
+                disabled: True
+                size_hint_x: 0.6
+                background_normal: ''
+                background_color: 0.3, 0.3, 0.3, 1  # Un poco más claro al ser solo lectura
+                foreground_color: 0.8, 0.8, 0.8, 1
                 padding: [10, 10]
 
-    # Etiqueta de resultado
+    ############################################################################
+    #                           SEPARADOR VISUAL                              #
+    ############################################################################
+    Widget:
+        size_hint_y: None
+        height: 1
+        canvas.before:
+            Color:
+                rgba: 0.5, 0.5, 0.5, 0.3
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    ############################################################################
+    #                          ETIQUETA DE RESULTADO                          #
+    ############################################################################
     Label:
         id: result_label
-        text: "Resultado:"
+        text: "Resultado: $0"
         font_size: "20sp"
         color: 0.8, 0.8, 0.8, 1
         size_hint_y: None
         height: "40dp"
         bold: True
+        halign: "center"
+        valign: "middle"
+        text_size: self.size
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.1, 0.1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
 
-    # Botones
+    ############################################################################
+    #                                BOTONES                                   #
+    ############################################################################
     BoxLayout:
         size_hint_y: None
         height: "50dp"
         spacing: 15
+
         Button:
             text: "Calcular"
             background_normal: ''
             background_color: 0.2, 0.6, 0.9, 1
             color: 1, 1, 1, 1
-            on_press: root.calcular_pension_gui()
+            on_release: root.calcular_pension_gui()
+
         Button:
             text: "Limpiar"
             background_normal: ''
             background_color: 0.5, 0.5, 0.5, 1
             color: 1, 1, 1, 1
-            on_press: root.limpiar_campos()
+            on_release: root.limpiar_campos()
+
         Button:
             text: "Ayuda"
             background_normal: ''
             background_color: 0.2, 0.7, 0.4, 1
             color: 1, 1, 1, 1
-            on_press: root.mostrar_ayuda()
+            on_release: root.mostrar_ayuda()
