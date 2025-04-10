@@ -78,3 +78,11 @@ Se clona el proyecto luego ingresa a la carpeta raiz (calculadora-pensional), de
 ```
 py test\Pension_Calculate_Test.py
 ```
+
+## Instrucciones para ejecutar la interfaz gráfica (GUI):
+- Asegúrate de tener instalado el framework Kivy. Si no lo tienes, instálalo con el siguiente comando:
+```
+pip install kivy
+```
+
+
