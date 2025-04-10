@@ -80,9 +80,25 @@ py test\Pension_Calculate_Test.py
 ```
 
 ## Instrucciones para ejecutar la interfaz gráfica (GUI):
-- Asegúrate de tener instalado el framework Kivy. Si no lo tienes, instálalo con el siguiente comando:
+Asegúrate de tener instalado el framework Kivy. Si no lo tienes, instálalo con el siguiente comando:
 ```
 pip install kivy
 ```
+Luego, sigue estos pasos:
+1. Clona el repositorio y navega a la carpeta raíz del proyecto (calculadora-pensional) desde la terminal.
+2. Desde la terminal, ejecuta el siguiente comando para abrir la interfaz gráfica:
+```
+py src/view/gui/pension_gui.py
+```
+Se abrirá una ventana en la que deberás ingresar:
+
+- El Ingreso Base de Liquidación (IBL).
+
+- El Porcentaje de pensión que aplicarás al IBL.
+
+- El Salario Mínimo Mensual Legal Vigente (SMMLV) (este se autocompleta con el valor por defecto de $1,300,000, por lo que no es necesario modificarlo).
+
+Haz clic en "Calcular" para obtener el valor estimado de la pensión mensual.
 
 
+También puedes usar el botón "Limpiar" para reiniciar los campos o "Ayuda" para ver una explicación detallada del funcionamiento de la calculadora.
