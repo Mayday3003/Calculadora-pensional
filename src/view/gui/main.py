@@ -24,6 +24,7 @@ kv_path = os.path.join(os.path.dirname(__file__), "pension_gui.kv")
 Builder.load_file(kv_path)
 
 
+
 # Clase que define el layout principal de la GUI
 class PensionLayout(BoxLayout):
     # Valor por defecto del SMMLV (Salario Mínimo Mensual Legal Vigente)
