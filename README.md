@@ -44,6 +44,64 @@ pip install kivy==2.3.1
 * Luego, se ingresa el valor del salario mínimo legal vigente
 * Y por ultimo se muestra el valor total de la pensión
 
+
+## Instrucciones para generar el ejecutable en Linux
+
+### Requisitos adicionales
+
+- PyInstaller
+
+Instalación:
+
+```bash
+pip install pyinstaller
+```
+
+### Procedimiento
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/tu_usuario/Calculadora-pensional.git
+cd Calculadora-pensional
+```
+
+2. Dar permisos de ejecución al script:
+
+```bash
+chmod +x install.sh
+```
+
+3. Ejecutar el script para construir el ejecutable e instalar el acceso directo:
+
+```bash
+./install.sh
+```
+
+El script realizará las siguientes acciones:
+
+- Instalará las dependencias necesarias.
+- Generará el ejecutable en `dist/CalculadoraPensional/CalculadoraPensional`.
+- Creará un acceso directo en el sistema operativo Linux.
+- Actualizará la base de datos de aplicaciones para que la aplicación pueda ser buscada en el menú del sistema.
+
+### Ejecución de la aplicación instalada
+
+Una vez completada la instalación:
+
+- Buscar la aplicación "Calculadora Pensional" en el menú de aplicaciones del sistema operativo.
+- O alternativamente, ejecutar el archivo directamente desde la terminal:
+
+```bash
+./dist/CalculadoraPensional/CalculadoraPensional
+```
+
+Asegúrate de tener permisos de ejecución sobre el archivo si es necesario.
+
+---
+
+
+
 ### Ejecutar la GUI
 
 ```bash
